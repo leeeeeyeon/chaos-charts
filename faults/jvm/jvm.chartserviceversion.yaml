@@ -28,5 +28,5 @@ spec:
     - name: k6 Website
       url: https://byteman.jboss.org/
   icon:
-    - url: https://github.com/litmuschaos/chaos-charts/blob/sample/faults/jvm/icons/byteman.png
+    - url: https://github.com/leeeeeyeon/chaos-charts/blob/sample/faults/jvm/icons/byteman.png
       mediatype: image/png
