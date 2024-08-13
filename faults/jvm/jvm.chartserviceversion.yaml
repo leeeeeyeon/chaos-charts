@@ -13,20 +13,19 @@ spec:
   categoryDescription: >
     Load chaos contains different chaos experiments to test the app/platform service availability. It will install all the experiments which can be used to inject load into the services like VMs, Pods and so on.
   faults:
-    - name: jvm
-      description: It injects the load on the application using k6 load generator
-      displayName: "k6 Load Generator"
+    - name: byteman
+      description: Byteman을 사용하여 JVM 어플리케이션에 장애 주입
+      displayName: "여기 뭐 적어야 하니"
   keywords:
-    - Load
+    - Byteman
+    - JVM
   maintainers:
     - name: JeongYeon Lee
       email: leeeee_yeon@naver.com
   minKubeVersion: 1.32.0
   links:
-    - name: Kubernetes Website
-      url: https://kubernetes.io
-    - name: k6 Website
+    - name: Byteman Website
       url: https://byteman.jboss.org/
   icon:
-    - url: https://github.com/leeeeeyeon/chaos-charts/blob/sample/faults/jvm/icons/byteman.png
+    - url: https://github.com/litmuschaos/chaos-charts/blob/master/faults/spring-boot/icons/spring-boot.png # TODO: 수정 필요
       mediatype: image/png
