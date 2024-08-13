@@ -1,6 +1,6 @@
 ---
-packageName: load
+packageName: jvm
 experiments:
-  - name: k6-loadgen
-    CSV: k6-loadgen.chartserviceversion.yaml
-    desc: "k6-loadgen"
+  - name: byteman
+    CSV: byteman.chartserviceversion.yaml
+    desc: "byteman"
