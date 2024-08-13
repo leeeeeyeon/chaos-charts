@@ -9,7 +9,7 @@ metadata:
     chartDescription: Injects JVM application fault on the application
     executionPlane: "kubernetes"
 spec:
-  displayName: JVM Display Name
+  displayName: JVM
   categoryDescription: >
     Load chaos contains different chaos experiments to test the app/platform service availability. It will install all the experiments which can be used to inject load into the services like VMs, Pods and so on.
   faults:
