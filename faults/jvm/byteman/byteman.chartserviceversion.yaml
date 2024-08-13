@@ -2,24 +2,24 @@
 apiVersion: litmuschaos.io/v1alpha1
 kind: ChartServiceVersion
 metadata:
-  createdAt: 2024-02-10T01:00:00Z
-  name: k6-loadgen
+  createdAt: 2024-08-13T20:00:00Z
+  name: byteman
   version: 0.1.0
   annotations:
-    categories: Load
+    categories: JVM
     vendor: LitmusChaos
 spec:
-  displayName: k6 Load Generator
+  displayName: Byteman Display Name
   categoryDescription: |
-     k6 is an open-source load testing tool that makes performance testing easy and productive for engineering teams. You can easily run load testing through a single JS script. It's a modern alternative to LoadRunner, Grinder, and JMeter.
+    Byteman is a tool which makes it easy to trace, monitor and test the behavior of Java applications.
   keywords:
-    - k6
-    - Load
+    - byteman
+    - JVM
   platforms:
     - kubernetes
   maintainers:
-    - name: Namkyu Park
-      email: lak9348@gmail.com
+    - name: JeongYeon Lee
+      email: leeeee_yeon@naver.com
   minKubeVersion: 1.32.0
   links:
     - name: Documentation

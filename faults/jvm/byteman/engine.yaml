@@ -8,7 +8,7 @@ spec:
   engineState: 'active'
   chaosServiceAccount: litmus-admin
   experiments:
-    - name: k6-loadgen
+    - name: byteman
       spec:
         components:
           env:
