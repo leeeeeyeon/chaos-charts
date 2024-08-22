@@ -10,6 +10,7 @@ spec:
   # 왜 k6 loadgen에서는 admin을 사용?
   chaosServiceAccount: litmus-admin
   experiments:
+  - name: jvm-modify-return
     spec:
       components:
         env:
