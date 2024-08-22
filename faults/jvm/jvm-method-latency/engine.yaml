@@ -8,7 +8,7 @@ spec:
   # It can be active/stop
   engineState: 'active'
   # 왜 k6 loadgen에서는 admin을 사용?
-  chaosServiceAccount: jvm-method-latency-sa 
+  chaosServiceAccount: litmus-admin
   experiments:
     spec:
       components:
