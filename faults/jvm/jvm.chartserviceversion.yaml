@@ -11,11 +11,26 @@ metadata:
 spec:
   displayName: JVM
   categoryDescription: >
-    Load chaos contains different chaos experiments to test the app/platform service availability. It will install all the experiments which can be used to inject load into the services like VMs, Pods and so on.
+     It contains chaos to disrupt state of JVM application.
   faults:
-    - name: byteman
-      description: Byteman을 사용하여 JVM 어플리케이션에 장애 주입
-      displayName: "여기 뭐 적어야 하니"
+    - name: jvm-custom-exception
+      description: It injects custom exception in a JVM application.
+      displayName: "JVM Custom Exception"
+    - name: jvm-pressure
+      description: It increase JVM pressure in a JVM application.
+      displayName: "JVM Pressure"
+    - name: jvm-method-latency
+      description: It injects method latency in a JVM application.
+      displayName: "JVM Method Latency"
+    - name: jvm-modify-return
+      description: It modifies return value of a method in a JVM application.
+      displayName: "JVM Modify Return"
+    - name: jvm-garbage-colection
+      description: It injects garbage collection in a JVM application.
+      displayName: "JVM Garbage Collection"
+    - name: jvm-byteman-config
+      description: It injects chaos using byteman configuration in a JVM application.
+      displayName: "JVM Byteman Config"
   keywords:
     - Byteman
     - JVM
@@ -27,5 +42,5 @@ spec:
     - name: Byteman Website
       url: https://byteman.jboss.org/
   icon:
-    - url: https://github.com/litmuschaos/chaos-charts/blob/master/faults/spring-boot/icons/spring-boot.png # TODO: 수정 필요
+    - url: https://github.com/litmuschaos/chaos-charts/blob/master/faults/spring-boot/icons/spring-boot.png
       mediatype: image/png
