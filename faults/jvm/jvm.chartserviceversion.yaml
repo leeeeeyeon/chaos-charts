@@ -25,7 +25,7 @@ spec:
     - name: jvm-modify-return
       description: It modifies return value of a method in a JVM application.
       displayName: "JVM Modify Return"
-    - name: jvm-garbage-colection
+    - name: jvm-garbage-collection
       description: It injects garbage collection in a JVM application.
       displayName: "JVM Garbage Collection"
     - name: jvm-byteman-config
@@ -42,5 +42,5 @@ spec:
     - name: Byteman Website
       url: https://byteman.jboss.org/
   icon:
-    - url: https://github.com/litmuschaos/chaos-charts/blob/master/faults/spring-boot/icons/spring-boot.png
+    - url: https://github.com/leeeeeyeon/chaos-charts/blob/master/faults/jvm/icons/jvm.png
       mediatype: image/png
