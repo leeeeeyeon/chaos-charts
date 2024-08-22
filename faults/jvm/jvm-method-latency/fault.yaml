@@ -1,0 +1,104 @@
+---
+apiVersion: litmuschaos.io/v1alpha1
+description:
+  message: |
+    Increase method latency in JVM application
+kind: ChaosExperiment
+metadata:
+  name: jvm-method-latency
+  labels:
+    name: jvm-method-latency
+    app.kubernetes.io/part-of: litmus
+    app.kubernetes.io/component: chaosexperiment
+    app.kubernetes.io/version: ci
+spec:
+  definition:
+    scope: Namespaced
+    # 아직 잘 모르겠어서 멘토님거 복붙함
+    permissions:
+      # Create and monitor the experiment & helper pods
+      - apiGroups: [""]
+        resources: ["pods"]
+        verbs:
+          [
+            "create",
+            "delete",
+            "get",
+            "list",
+            "patch",
+            "update",
+            "deletecollection",
+          ]
+      # Performs CRUD operations on the events inside chaosengine and chaosresult
+      - apiGroups: [""]
+        resources: ["events"]
+        verbs: ["create", "get", "list", "patch", "update"]
+      # Fetch configmaps & secrets details and mount it to the experiment pod (if specified)
+      - apiGroups: [""]
+        resources: ["secrets", "configmaps"]
+        verbs: ["get", "list"]
+      # Track and get the runner, experiment, and helper pods log
+      - apiGroups: [""]
+        resources: ["pods/log"]
+        verbs: ["get", "list", "watch"]
+      # for creating and managing to execute commands inside target container
+      - apiGroups: [""]
+        resources: ["pods/exec"]
+        verbs: ["get", "list", "create"]
+      # for configuring and monitor the experiment job by the chaos-runner pod
+      - apiGroups: ["batch"]
+        resources: ["jobs"]
+        verbs: ["create", "list", "get", "delete", "deletecollection"]
+      # for creation, status polling and deletion of litmus chaos resources used within a chaos workflow
+      - apiGroups: ["litmuschaos.io"]
+        resources: ["chaosengines", "chaosexperiments", "chaosresults"]
+        verbs: ["create", "list", "get", "patch", "update", "delete"]
+    image: "litmuschaos/docker-go-runner:ci"
+    imagePullPolicy: Always
+    args:
+      - -c
+      - ./experiments -name jvm-method-latency
+    command:
+      - /bin/bash
+    env:
+      # set chaos duration (in sec) as desired
+      - name: TOTAL_CHAOS_DURATION
+        value: "30"
+
+      # Interval between chaos injection in sec
+      - name: CHAOS_INTERVAL
+        value: "10" # litmus-go랑 통일
+
+      # Period to wait before and after injection of chaos in sec
+      - name: RAMP_TIME
+        value: "0"
+
+      # Byteman version
+      - name: BYTEMAN_VERSION
+        value: "4.0.23"
+
+      # Byteman rule name
+      - name: RULE_NAME
+        value: "BytemanRule"
+
+      # Target class to inject fault
+      - name: TARGET_CLASS
+        value: "Hello"
+
+      # Target method to inject fault
+      - name: TARGET_METHOD
+        value: "SayHello"
+
+      # Target location to inject fault
+      - name: TARGET_LOCATION
+        value: "ENTRY"
+
+      # Action to be performed
+      - name: ACTION
+        value: "traceln("hahaha")"
+
+    labels:
+      name: jvm-method-latency
+      app.kubernetes.io/part-of: litmus
+      app.kubernetes.io/component: chaosexperiment
+      app.kubernetes.io/version: ci

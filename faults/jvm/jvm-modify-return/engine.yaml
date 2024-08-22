@@ -1,0 +1,18 @@
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: jvm-chaos
+  namespace: default
+spec:
+  # It can be active/stop
+  engineState: 'active'
+  # 왜 k6 loadgen에서는 admin을 사용?
+  chaosServiceAccount: jvm-modify-return-sa 
+  experiments:
+    spec:
+      components:
+        env:
+          # set chaos duration (in sec) as desired
+          - name: TEST
+            value: "123"
