@@ -1,6 +1,21 @@
 ---
 packageName: jvm
 experiments:
-  - name: byteman
-    CSV: byteman.chartserviceversion.yaml
-    desc: "byteman"
+  - name: jvm-byteman-config
+    CSV: jvm-byteman-config.chartserviceversion.yaml
+    desc: "jvm-byteman-config"
+  - name: jvm-custom-exception
+    CSV: jvm-custom-exception.chartserviceversion.yaml
+    desc: "jvm-custom-exception"
+  - name: jvm-garbage-collection
+    CSV: jvm-garbage-collection.chartserviceversion.yaml
+    desc: "jvm-garbage-collection"
+  - name: jvm-method-latency
+    CSV: jvm-method-latency.chartserviceversion.yaml
+    desc: "jvm-method-latency"
+  - name: jvm-modify-return
+    CSV: jvm-modify-return.chartserviceversion.yaml
+    desc: "jvm-modify-return"
+  - name: jvm-pressure
+    CSV: jvm-pressure.chartserviceversion.yaml
+    desc: "jvm-pressure"
