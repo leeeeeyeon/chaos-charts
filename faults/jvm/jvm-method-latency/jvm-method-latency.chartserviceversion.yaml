@@ -1,0 +1,31 @@
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: jvm-method-latency
+  version: 0.1.0
+  annotations:
+    categories: JVM
+    vendor: LitmusChaos
+spec:
+  displayName: jvm-method-latency
+  categoryDescription: |
+    Need to write description
+  keywords:
+    - JVM
+  platforms:
+    - Hmm
+  maintainers:
+    - name: Lee Jeong Yeon
+      email: leeeee_yeon@naver.com
+  maturity: alpha
+  minKubeVersion: 1.12.0
+  labels:
+    app.kubernetes.io/component: chartserviceversion
+    app.kubernetes.io/version: ci
+  links:
+    - name: Documentation
+      url: https://litmuschaos.github.io/litmus/experiments/categories/contents
+  icon:
+    - url:
+      mediatype: ""
